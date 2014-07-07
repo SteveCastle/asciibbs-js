@@ -10,14 +10,24 @@
        you REALLY want to mess around with jQuery in the console. REMEMBER WE
        ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
   <script>window._$ = jQuery.noConflict(true);</script>
+  <style type="text/css">
+  body{
+  	background-color:black;
+  }
+    div{
+    	width:1920px;
+    	height:1080px;
+    	color:white;
+    	overflow:hidden;
+    	float:left;
+    }
+  </style>
 </head>
 <body>
-	<span class="asciiBbs">asciiBbs test markup</span>
-    <span class="asciiBbs">asciiBbs test markup</span>
-    <span class="asciiBbs">asciiBbs test markup</span>
+<div></div>
   </div>
   <script type="text/javascript">
-window.awesome = _$('.asciiBbs').asciiBbs({message: 'detected instance of asciiBbs'});
+window.awesome = _$('div').asciiBbs({text: '*+83\n*1253\n', speed:10});
   </script>
 </body>
 </html>

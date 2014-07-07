@@ -11,18 +11,30 @@
 var AsciiBbs = function(elem, options){
       this.elem = elem;
       this.$elem = $(elem);
-       this.options = options;
+      this.options = options;
     };
 
   AsciiBbs.prototype = {
     defaults: {
-      message: "Changed",
+      text: "This is the text to be printed.",
       speed: 1000
     },
+    position: 0,
     init: function() {
       this.config = $.extend({}, this.defaults, this.options);
-      this.$elem.text(this.config.message);
+      setInterval(this.counter.bind(this),this.config.speed);
       return this;
+    },
+    counter: function(){
+      if (this.config.text.length > this.position){
+      this.$elem.text(this.config.text[this.config.text.length - (this.position+1)]+ this.$elem.text());  
+      this.position = this.position + 1;
+      }else{
+        this.position = 0;
+      }
+
+
+      console.log(this.position);
     }
   };
   // Collection method.

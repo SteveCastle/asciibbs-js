@@ -33,11 +33,6 @@
     strictEqual(this.elems.asciiBbs(), this.elems, 'should be chainable');
   });
 
-  test('is asciiBbs', function() {
-    expect(1);
-    strictEqual(this.elems.asciiBbs().text(), 'ChangedChangedChanged', 'should be asciiBbs');
-  });
-
   module('jQuery.asciiBbs');
 
   test('is asciiBbs', function() {
