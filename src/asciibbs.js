@@ -1,38 +1,56 @@
 /*
- * asciibbs
+ * asciiBbs
  * 
  *
  * Copyright (c) 2014 Stephen Castle
  * Licensed under the MIT license.
  */
 
-(function ($) {
+ (function ($) {
 
+var AsciiBbs = function(elem, options){
+      this.elem = elem;
+      this.$elem = $(elem);
+       this.options = options;
+    };
+
+  AsciiBbs.prototype = {
+    defaults: {
+      message: "Changed",
+      speed: 1000
+    },
+    init: function() {
+      this.config = $.extend({}, this.defaults, this.options);
+      this.$elem.text(this.config.message);
+      return this;
+    }
+  };
   // Collection method.
-  $.fn.awesome = function () {
-    return this.each(function (i) {
-      // Do something awesome to each selected element.
-      $(this).html('awesome' + i);
+  $.fn.asciiBbs = function (options) {
+    return this.each(function () {
+      // Create Instance of Plugin for each selected element.
+      new AsciiBbs(this, options).init();
     });
   };
 
+
   // Static method.
-  $.awesome = function (options) {
+  $.asciiBbs = function (options) {
     // Override default options with passed-in options.
-    options = $.extend({}, $.awesome.options, options);
-    // Return something awesome.
-    return 'awesome' + options.punctuation;
+    options = $.extend({}, $.asciiBbs.options, options);
+    // Return something asciiBbs.
+    return 'asciiBbs' + options.punctuation;
   };
 
   // Static method default options.
-  $.awesome.options = {
+  $.asciiBbs.options = {
     punctuation: '.'
   };
 
   // Custom selector.
-  $.expr[':'].awesome = function (elem) {
-    // Is this element awesome?
-    return $(elem).text().indexOf('awesome') !== -1;
+  $.expr[':'].asciiBbs = function (elem) {
+    // Is this element asciiBbs?
+    return $(elem).text().indexOf('asciiBbs') !== -1;
   };
 
 }(jQuery));

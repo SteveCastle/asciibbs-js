@@ -1,16 +1,16 @@
 {
-  "name": "asciibbs",
+  "name": "asciiBbs",
   "title": "Ascii BBS",
   "description": "Ascii art text scroller.",
   "version": "0.0.1",
-  "homepage": "asciibbs-js",
+  "homepage": "asciiBbs-js",
   "author": {
     "name": "Stephen Castle",
     "url": "https://github.com/steveCastle"
   },
   "repository": {
     "type": "git",
-    "url": "asciibbs-js"
+    "url": "asciiBbs-js"
   },
   "bugs": "",
   "licenses": [
